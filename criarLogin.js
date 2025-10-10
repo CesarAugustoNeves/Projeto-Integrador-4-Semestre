@@ -1,3 +1,4 @@
+//DIA 10/10|NOME:Cesar Augusto neves|HORA INICIO: 11:06 HORA FINAL DO DIA:11:30
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Pega o formulário pelo seu ID
     const form = document.getElementById('loginForm');
@@ -14,15 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = emailInput.value;
         const password = passwordInput.value;
 
-        // 6. Para fins de teste no Front-end (sem back-end):
+        // 6. Testar no Front-end
         console.log('--- Dados de Cadastro ---');
         console.log('Email:', email);
         console.log('Senha:', password);
         
-        // Simulação de sucesso após a coleta dos dados
-        alert('Dados coletados! O processo de cadastro foi simulado.');
+        // Mensagem de sucesso
+        alert('Dados cadastrados!');
         
-        // Limpa o formulário (opcional)
+        // Limpa o formulário
         form.reset();
     });
 });
