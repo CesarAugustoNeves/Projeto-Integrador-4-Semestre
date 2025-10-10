@@ -34,20 +34,3 @@ button {
     cursor: pointer; /* Modifica o cursor sobre o botão */
     font-size: 1.1em; /* Aumenta o tamanho da fonte */
 }
-
-.botao-criar-conta {
-    display: inline-block; 
-    padding: 10px 15px; 
-    margin-top: 10px; 
-    background-color: #4CAF50; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.botao-criar-conta:hover {
-    background-color: #45a049; 
-}
