@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escanear Produtos - Mercado Autônomo</title>
+    <link rel="stylesheet" type="text/css" href="escanearProduto.css">
+    <script src="escanearProduto.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mercado Autônomo - Escanear Produtos</h1>
+        </header>
+        
+        <div class="main-content">
+            <section class="scanner-section">
+                <h2>Escanear Produtos</h2>
+                
+                <div class="scanner-controls">
+                    <div class="camera-preview">
+                        <div class="camera-placeholder">
+                            <i>📷</i>
+                            <p>Área de escaneamento</p>
+                            <p>Posicione o código de barras do produto aqui</p>
+                        </div>
+                    </div>
+                    
+                    <div class="manual-input">
+                        <input type="text" id="productCode" placeholder="Digite o código do produto">
+                        <button id="addProductBtn">Adicionar Produto</button>
+                    </div>
+                    
+                    <button id="startCameraBtn">Ativar Câmera</button>
+                    
+                    <div class="recent-scans">
+                        <h3>Escaneamentos Recentes</h3>
+                        <div class="scan-history" id="scanHistory">
+                            <!-- Histórico de escaneamentos será preenchido dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="cart-section">
+                <h2>Seu Carrinho</h2>
+                
+                <div class="cart-items" id="cartItems">
+                    <!-- Itens do carrinho serão preenchidos dinamicamente -->
+                    <div class="empty-cart">
+                        <p>Seu carrinho está vazio</p>
+                        <p>Escaneie produtos para adicioná-los ao carrinho</p>
+                    </div>
+                </div>
+                
+                <div class="cart-total">
+                    Total: R$ <span id="totalAmount">0,00</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="logout-btn" id="logoutBtn">Sair</button>
+                    <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
