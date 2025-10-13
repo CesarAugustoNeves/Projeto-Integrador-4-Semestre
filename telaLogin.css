@@ -2,7 +2,9 @@ body {
     font-family: 'Times New Roman', serif;
     text-align: center;
     background-image: url("https://static.itdg.com.br/images/auto-auto/7d23db303dd27fd25d921823ade21743/regra-dos-3-no-mercado.jpg");
-    background-position: center;
+    background-position:center;
+    background-repeat: no-repeat; /*Não repetir a imagem*/
+    background-size: cover; /*Cobrir toda a área com a imagem*/
 }
 form {
     padding:20px;
@@ -33,21 +35,4 @@ button {
     border-radius: 70px; /* Arredondamento do botão */
     cursor: pointer; /* Modifica o cursor sobre o botão */
     font-size: 1.1em; /* Aumenta o tamanho da fonte */
-}
-
-.botao-criar-conta {
-    display: inline-block; 
-    padding: 10px 15px; 
-    margin-top: 10px; 
-    background-color: #4CAF50; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.botao-criar-conta:hover {
-    background-color: #45a049; 
 }
