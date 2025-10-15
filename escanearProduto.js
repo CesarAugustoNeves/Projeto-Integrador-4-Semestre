@@ -1,3 +1,4 @@
+/*--DIA 13/10|NOME:Vitor Eugênio Castelano Silva|HORA INICIO: 14:00 HORA FINAL DO DIA:16:40 --*/        
         // Simulação de banco de dados de produtos
         const productsDatabase = {
             '123456': { name: 'Arroz 5kg', price: 25.90 },
