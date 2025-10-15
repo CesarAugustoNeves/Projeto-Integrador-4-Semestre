@@ -11,4 +11,5 @@ import java.util.Optional; // Importe esta classe
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     // <Tipo da Entidade, Tipo da Chave Primária (id)>
     Optional<Usuario> findByEmailAndSenha(String email, String senha);
+    Optional<Usuario> findByEmail(String email);
 }
