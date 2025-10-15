@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Certifique-se de que o ID do seu formulário no HTML é 'loginForm'
+    //Feito por: CESAR AUGUSTO NEVES
+    // Garantir de que o ID do formulário no HTML é 'loginForm'
     const form = document.getElementById('loginForm'); 
 
     form.addEventListener('submit', function(event) {
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             senha: password // IMPORTANTE: Deve ser 'senha' para corresponder a Usuario.java
         };
 
-        // 3. Define a URL do seu Endpoint no Spring Boot
+        // 3. Define a URL do Endpoint no Spring Boot
         const url = 'http://localhost:8081/api/usuarios';
 
         // 4. Faz a requisição POST para o servidor
@@ -29,16 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(dadosUsuario) 
         })
         .then(response => {
-            // Verifica se o servidor retornou um código de sucesso (200, 201)
-            if (!response.ok) {
-                // Se for um erro (4xx ou 5xx), trata a falha
-                throw new Error('Falha no cadastro. Servidor retornou: ' + response.status);
-            }
-            // Converte a resposta (o objeto salvo) de volta para JS
-            return response.json(); 
-        })
+            // 1. TRATA O ERRO 409 (E-mail Duplicado)
+            if (response.status === 409) {
+                throw new Error('E-mail já cadastrado. Tente outro.'); 
+            }
+            // 2. TRATA OUTROS ERROS QUE NÃO SEJAM O 409 E O SUCESSO 201
+            if (!response.ok) {
+                throw new Error('Falha no cadastro. Servidor retornou: ' + response.status);
+            }
+            
+            // 3. Retorna a resposta JSON para o próximo .then() (SUCESSO)
+            return response.json(); 
+        })
         .then(data => {
-            // SUCESSO! O usuário foi salvo no MySQL.
+            // SUCESSO! O usuário salvo no db.
             console.log('Usuário cadastrado com sucesso! ID:', data.id);
             alert('Cadastro realizado com sucesso! Pode fazer o login.');
             form.reset();
