@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
 
-            // 2. TRATA OUTROS ERROS QUE NÃO SEJAM O 409 E O SUCESSO 201
+            // 1. TRATA OUTROS ERROS QUE NÃO SEJAM O 409 E O SUCESSO 201
             if (!response.ok) {
                 throw new Error('Falha no cadastro. Servidor retornou: ' + response.status);
             }
             
-            // 3. Retorna a resposta JSON para o próximo .then() (SUCESSO)
+            // 2. Retorna a resposta JSON para o próximo .then() (SUCESSO)
             return response.json(); 
         })
         .then(data => {
