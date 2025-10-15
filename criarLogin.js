@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             // ERRO! Falha na rede ou erro do servidor.
             console.error('Erro ao enviar dados:', error);
-            alert('Erro ao cadastrar. Verifique se o servidor Java está rodando na porta 8081 e se o MySQL está ativo.');
+            alert('E-mail já cadastrado tente outro');
         });
     });
 });
