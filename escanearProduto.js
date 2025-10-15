@@ -26,6 +26,7 @@
         const scanHistoryContainer = document.getElementById('scanHistory');
         const checkoutBtn = document.getElementById('checkoutBtn');
         const logoutBtn = document.getElementById('logoutBtn');
+        const clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
         // Adicionar produto ao carrinho
         function addProductToCart(productCode) {
@@ -60,6 +61,7 @@
             
             updateCartDisplay();
             productCodeInput.value = ''; // Limpar campo de entrada
+            productCodeInput.focus(); // Focar no campo de entrada
         }
 
         // Atualizar exibição do carrinho
@@ -70,6 +72,7 @@
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = `
                     <div class="empty-cart">
+                        <i class="fas fa-shopping-basket"></i>
                         <p>Seu carrinho está vazio</p>
                         <p>Escaneie produtos para adicioná-los ao carrinho</p>
                     </div>
@@ -89,7 +92,7 @@
                                 <span class="quantity">${item.quantity}</span>
                                 <button class="quantity-btn plus" data-code="${item.code}">+</button>
                             </div>
-                            <button class="remove-btn" data-code="${item.code}">Remover</button>
+                            <button class="remove-btn" data-code="${item.code}"><i class="fas fa-trash"></i> Remover</button>
                         </div>
                     `;
                     cartItemsContainer.appendChild(itemElement);
@@ -130,7 +133,7 @@
                 if (productsDatabase[code]) {
                     const scanItem = document.createElement('div');
                     scanItem.className = 'scan-item';
-                    scanItem.textContent = productsDatabase[code].name;
+                    scanItem.innerHTML = `<i class="fas fa-barcode"></i> ${productsDatabase[code].name}`;
                     scanItem.addEventListener('click', () => {
                         addProductToCart(code);
                     });
@@ -175,6 +178,12 @@
             updateCartDisplay();
         }
 
+        // Limpar histórico
+        function clearHistory() {
+            scanHistory = [];
+            updateScanHistory();
+        }
+
         // Event Listeners
         addProductBtn.addEventListener('click', () => {
             const productCode = productCodeInput.value.trim();
@@ -216,6 +225,16 @@
                 alert('Saindo do sistema...');
                 // Em uma implementação real, aqui você redirecionaria para a página de login
                 // window.location.href = 'telaLogin.html';
+            }
+        });
+
+        clearHistoryBtn.addEventListener('click', () => {
+            if (scanHistory.length > 0) {
+                if (confirm('Tem certeza que deseja limpar o histórico de escaneamentos?')) {
+                    clearHistory();
+                }
+            } else {
+                alert('O histórico de escaneamentos já está vazio.');
             }
         });
 

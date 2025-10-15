@@ -1,4 +1,3 @@
-<!--DIA 13/10|NOME:Vitor Eugênio Castelano Silva|HORA INICIO: 14:00 HORA FINAL DO DIA:16:40 --> 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,17 +10,18 @@
 <body>
     <div class="container">
         <header>
-            <h1>Mercado Autônomo - Escanear Produtos</h1>
+            <h1><i class="fas fa-shopping-cart"></i> Mercado Autônomo</h1>
+            <p class="header-subtitle">Sistema de Autoatendimento - Escanear Produtos</p>
         </header>
         
         <div class="main-content">
             <section class="scanner-section">
-                <h2>Escanear Produtos</h2>
+                <h2><i class="fas fa-barcode"></i> Escanear Produtos</h2>
                 
                 <div class="scanner-controls">
                     <div class="camera-preview">
                         <div class="camera-placeholder">
-                            <i>📷</i>
+                            <i class="fas fa-camera"></i>
                             <p>Área de escaneamento</p>
                             <p>Posicione o código de barras do produto aqui</p>
                         </div>
@@ -29,13 +29,16 @@
                     
                     <div class="manual-input">
                         <input type="text" id="productCode" placeholder="Digite o código do produto">
-                        <button id="addProductBtn">Adicionar Produto</button>
+                        <button id="addProductBtn"><i class="fas fa-plus-circle"></i> Adicionar Produto</button>
                     </div>
                     
-                    <button id="startCameraBtn">Ativar Câmera</button>
+                    <button id="startCameraBtn"><i class="fas fa-camera"></i> Ativar Câmera</button>
                     
                     <div class="recent-scans">
-                        <h3>Escaneamentos Recentes</h3>
+                        <div class="section-title">
+                            <h3><i class="fas fa-history"></i> Escaneamentos Recentes</h3>
+                            <button class="clear-history" id="clearHistoryBtn">Limpar</button>
+                        </div>
                         <div class="scan-history" id="scanHistory">
                             <!-- Histórico de escaneamentos será preenchido dinamicamente -->
                         </div>
@@ -44,11 +47,12 @@
             </section>
             
             <section class="cart-section">
-                <h2>Seu Carrinho</h2>
+                <h2><i class="fas fa-shopping-basket"></i> Seu Carrinho</h2>
                 
                 <div class="cart-items" id="cartItems">
                     <!-- Itens do carrinho serão preenchidos dinamicamente -->
                     <div class="empty-cart">
+                        <i class="fas fa-shopping-basket"></i>
                         <p>Seu carrinho está vazio</p>
                         <p>Escaneie produtos para adicioná-los ao carrinho</p>
                     </div>
@@ -59,11 +63,13 @@
                 </div>
                 
                 <div class="action-buttons">
-                    <button class="logout-btn" id="logoutBtn">Sair</button>
-                    <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+                    <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Sair</button>
+                    <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-credit-card"></i> Finalizar Compra</button>
                 </div>
             </section>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
