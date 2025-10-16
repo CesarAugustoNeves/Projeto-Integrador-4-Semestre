@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             form.reset();
         })
         .catch(error => {
-            // ERRO! Falha na rede ou erro do servidor.
+            // ERRO! utilizando o mesmo email para cadastrar!
             console.error('Erro ao enviar dados:', error);
             alert('E-mail já cadastrado tente outro');
         });
