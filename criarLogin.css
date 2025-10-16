@@ -1,0 +1,37 @@
+/*DIA 10/10|NOME:Cesar Augusto neves|HORA INICIO: 11:06 HORA FINAL DO DIA:11:30*/
+body {
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    background-image: url("https://static.itdg.com.br/images/auto-auto/7d23db303dd27fd25d921823ade21743/regra-dos-3-no-mercado.jpg");
+    background-position: center;
+}
+form {
+    padding:20px;
+    border-radius:10px;
+    width: 400px;
+    margin: 0 auto;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-shopping-mall-supermarket-selection-merchandise-poster-background-material-image_133225.jpg");
+}
+
+label {
+    color: black; /* Cor do texto label */
+    display: block; /* Posiciona acima dos inputs */
+    margin-bottom: 2px; /* Espaço entre os textos label e input */
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    font-family: Impact, Haettenschweiler, 'Times New Roman', serif; /*Fonte*/
+}
+input {
+    width: 85%; /* Largura da barra de input */
+    padding: 10px; /* Tamanho da barra de input */
+    border-radius: 5px; /* Fundo da barra de input */
+    margin-bottom: 13px; /* Espaço entre as barras */
+}
+button {
+    background-color: blue; /* Cor do botão */
+    color: white; /* Cor do texto no botão */
+    padding: 15px 20px; /* Tamanho do botão */
+    border: none; /* Borda do botão */
+    border-radius: 70px; /* Arredondamento do botão */
+    cursor: pointer; /* Modifica o cursor sobre o botão */
+    font-size: 1.1em; /* Aumenta o tamanho da fonte */
+}
