@@ -214,9 +214,7 @@
             }
             
             // Redirecionar para a tela de pagamento
-            alert('Redirecionando para a tela de pagamento...');
-            // Em uma implementação real, aqui você redirecionaria para a página de pagamento
-            // window.location.href = 'pagamento.html';
+            window.location.href = 'telaPagamento.html';
         });
 
         logoutBtn.addEventListener('click', () => {
