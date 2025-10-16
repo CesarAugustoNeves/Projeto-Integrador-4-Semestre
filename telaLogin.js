@@ -42,8 +42,8 @@ form.addEventListener('submit', (e) => {
         console.log('Login bem-sucedido!', data);
         alert('Login realizado com sucesso! Bem-vindo(a).');
         
-        // **AQUI você faria o redirecionamento:**
-        // window.location.href = 'escanearProduto.html'; 
+        // REDIRECIONAMENTO para a página de escanear produto
+        window.location.href = 'escanearProduto.html';
     })
     .catch(error => {
         // Se houver qualquer erro (rede ou 401/500), mostra a mensagem de erro
