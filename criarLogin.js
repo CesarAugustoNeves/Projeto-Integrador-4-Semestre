@@ -30,18 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(dadosUsuario) 
         })
         .then(response => {
-            // 1. TRATA O ERRO 409 (E-mail Duplicado)
-            if (response.status === 409) {
-                throw new Error('E-mail já cadastrado. Tente outro.'); 
-            }
-            // 2. TRATA OUTROS ERROS QUE NÃO SEJAM O 409 E O SUCESSO 201
-            if (!response.ok) {
-                throw new Error('Falha no cadastro. Servidor retornou: ' + response.status);
-            }
-            
-            // 3. Retorna a resposta JSON para o próximo .then() (SUCESSO)
-            return response.json(); 
-        })
+            // 1. TRATA O ERRO 409 (E-mail Duplicado)
+            if (response.status === 409) {
+               throw new Error('E-mail já cadastrado. Tente outro.'); 
+            }
+            // 2. TRATA OUTROS ERROS QUE NÃO SEJAM O 409 E O SUCESSO 201
+            if (!response.ok) {
+               throw new Error('Falha no cadastro. Servidor retornou: ' + response.status);
+            }
+
+           // 3. Retorna a resposta JSON para o próximo .then() (SUCESSO)
+            return response.json(); 
+        })
         .then(data => {
             // SUCESSO! O usuário salvo no db.
             console.log('Usuário cadastrado com sucesso! ID:', data.id);
