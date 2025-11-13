@@ -1,4 +1,4 @@
-package net.pi.springboot_app.model; // Ajuste para net.pi.springboot_app.Model se a pasta for maiúscula
+package net.pi.springboot_app.model; 
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,21 +15,26 @@ public class Usuario {
 
     @Column(unique = true)
     // Campos do formulário de cadastro:
+    private String cpf; 
     private String email;
     private String senha; 
 
-    // Construtor vazio (obrigatório pelo JPA)
+    // Construtor vazio 
     public Usuario() {}
 
     // Construtor 
-    public Usuario(String email, String senha) {
+    public Usuario(String email, String senha, String cpf) {
         this.email = email;
         this.senha = senha;
+        this.cpf = cpf;
     }
 
     // --- GETTERS E SETTERS ---
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public String getCPF(){return cpf;}
+    public void setCPF(String cpf){this.cpf = cpf;}
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
