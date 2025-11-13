@@ -10,6 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const cpf = document.getElementById('cpf').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
+
+        function validarCPF(cpf) {
+        // Remove caracteres não numéricos
+        cpf = cpf.replace(/[^\d]/g, ""); 
+
+        // Verifica se tem 11 dígitos e se não são todos iguais
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+            return false;
+        }
+        return true; 
+        }
+
+        // Validação do CPF
+        if (!validarCPF(cpf)) {
+            // Se o CPF for inválido
+            alert('CPF inválido. Por favor, verifique o número digitado.');
+            return; // Impede o envio do formulário
+        }
         
         // Cria o objeto JavaScript
         const dadosUsuario = {
