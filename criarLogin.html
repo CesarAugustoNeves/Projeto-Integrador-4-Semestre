@@ -11,10 +11,14 @@
         <div class="backgroud-image"></div>
         <form id="loginForm">           
             <h1 class="login-header">Cadastrar Login</h1> 
-            <label for="email">E-mail:</label> <!--Onde o cliente vai colocar o seu email-->
+
+            <label for="cpf">CPF:</label> <!--Coloca CPF-->
+            <input type="cpf" id="cpf" name="cpf" required>
+
+            <label for="email">E-mail:</label> <!--Coloca Email-->
             <input type="email" id="email" name="email" required>
 
-            <label for="password">Senha:</label> <!--Onde o cliente vai colocar a sua senha-->
+            <label for="password">Senha:</label> <!--Coloca Senha-->
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Cadastrar Login</button>
